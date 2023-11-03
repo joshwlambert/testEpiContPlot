@@ -1,0 +1,89 @@
+---
+title: "test-epicontacts-plotting"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{test-epicontacts-plotting}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(testEpiContPlot)
+library(simulist)
+library(epicontacts)
+library(epiparameter)
+```
+
+```{r, load-data}
+# load data required to simulate outbreak data
+serial_interval <- epiparameter::epidist(
+  disease = "COVID-19",
+  epi_dist = "serial interval",
+  prob_distribution = "gamma",
+  prob_distribution_params = c(shape = 1, scale = 1)
+)
+
+# get onset to hospital admission from {epiparameter} database
+onset_to_hosp <- epiparameter::epidist_db(
+  disease = "COVID-19",
+  epi_dist = "onset to hospitalisation",
+  single_epidist = TRUE
+)
+
+# get onset to death from {epiparameter} database
+onset_to_death <- epiparameter::epidist_db(
+  disease = "COVID-19",
+  epi_dist = "onset to death",
+  single_epidist = TRUE
+)
+
+contact_distribution <- epiparameter::epidist(
+  disease = "COVID-19",
+  epi_dist = "contact_distribution",
+  prob_distribution = "pois",
+  prob_distribution_params = c(l = 5)
+)
+```
+
+```{r, sim-data}
+set.seed(1)
+outbreak <- sim_outbreak(
+  R = 1.1,
+  serial_interval = serial_interval,
+  onset_to_hosp = onset_to_hosp,
+  onset_to_death = onset_to_death,
+  contact_distribution = contact_distribution
+)
+outbreak
+```
+
+```{r, create-epicontacts}
+epicontacts <- epicontacts::make_epicontacts(
+  linelist = outbreak$linelist, 
+  contacts = outbreak$contacts, 
+  id = "case_name", 
+  from = "part_name", 
+  to = "contact_name", 
+  directed = TRUE
+)
+epicontacts
+```
+
+```{r, plot-epicontacts1}
+plot(epicontacts)
+```
+
+```{r, plot-epicontacts2}
+epicontacts::vis_epicontacts(epicontacts)
+```
+
+```{r, plot-epicontacts3}
+epicontacts::graph3D(epicontacts)
+```

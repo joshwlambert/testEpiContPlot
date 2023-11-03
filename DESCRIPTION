@@ -1,0 +1,28 @@
+Package: testEpiContPlot
+Type: Package
+Title: Package to test epicontacts plotting on the web
+Version: 0.1.0
+Authors@R: person(
+             given = "Joshua W.", 
+             family = "Lambert", 
+             email = "joshua.lambert@lshtm.ac.uk", 
+             role = c("aut", "cre", "cph"),
+             comment = c(ORCID = "0000-0001-5218-3046")
+           )
+Description: The epicontacts R package has interactive plotting functionality,
+    this package tests how such functionality works with publishing plots on the
+    web through pkgdown.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Suggests:
+    epicontacts (>= 1.1.3),
+    knitr,
+    rmarkdown,
+    simulist,
+    epiparameter
+Remotes:
+    epiverse-trace/simulist,
+    epiverse-trace/epiparameter@reexport_generics
+LazyData: true
+RoxygenNote: 7.2.3
+VignetteBuilder: knitr
