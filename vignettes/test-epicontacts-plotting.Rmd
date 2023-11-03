@@ -3,6 +3,8 @@ title: "test-epicontacts-plotting"
 output: 
   bookdown::html_vignette2:
     code_folding: show
+pkgdown:
+  as_is: true
 vignette: >
   %\VignetteIndexEntry{test-epicontacts-plotting}
   %\VignetteEngine{knitr::rmarkdown}
