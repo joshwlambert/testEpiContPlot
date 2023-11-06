@@ -67,6 +67,7 @@
 
 <p>The goal of testEpiContPlot is to test the interactive plotting of epicontacts on the web.</p>
 <p><strong><em>Conclusion</em></strong>: The <code>pkgdown: as_is: true</code> code in the vignette yaml is the reason the interactive {epicontacts} plots will not render correctly on the pkgdown website (see <a href="https://pkgdown.r-lib.org/reference/build_articles.html#output-formats" class="external-link">the {pkgdown} site for info on <code>as_is</code></a>).</p>
+<p>Without <code>pkgdown: as_is: true</code> the rendering engine will default to <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/html_document.html" class="external-link">rmarkdown::html_document()</a></code>, as such, the features such as cross-referencing and figure caption numbering from <code><a href="https://pkgs.rstudio.com/bookdown/reference/html_document2.html" class="external-link">bookdown::html_document2()</a></code> will be lost.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
