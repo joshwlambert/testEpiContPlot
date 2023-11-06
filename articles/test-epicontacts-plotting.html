@@ -217,7 +217,7 @@
 <span><span class="co">#&gt; 42                 &lt;NA&gt;       &lt;NA&gt;         2023-01-07        2023-01-14</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $contacts</span></span>
-<span><span class="co">#&gt;               part_name              contact_name cnt_age cnt_gender</span></span>
+<span><span class="co">#&gt;                    from                        to cnt_age cnt_gender</span></span>
 <span><span class="co">#&gt; 1        Ashley Johnson             Bryant Barman      78          m</span></span>
 <span><span class="co">#&gt; 2        Ashley Johnson               Thomas Mead      37          m</span></span>
 <span><span class="co">#&gt; 3        Ashley Johnson              Jakoby Sealy      14          m</span></span>
@@ -550,8 +550,8 @@
 <span>  linelist <span class="op">=</span> <span class="va">outbreak</span><span class="op">$</span><span class="va">linelist</span>, </span>
 <span>  contacts <span class="op">=</span> <span class="va">outbreak</span><span class="op">$</span><span class="va">contacts</span>, </span>
 <span>  id <span class="op">=</span> <span class="st">"case_name"</span>, </span>
-<span>  from <span class="op">=</span> <span class="st">"part_name"</span>, </span>
-<span>  to <span class="op">=</span> <span class="st">"contact_name"</span>, </span>
+<span>  from <span class="op">=</span> <span class="st">"from"</span>, </span>
+<span>  to <span class="op">=</span> <span class="st">"to"</span>, </span>
 <span>  directed <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span>
 <span><span class="va">epicontacts</span></span>
