@@ -78,7 +78,7 @@ epicontacts <- epicontacts::make_epicontacts(
 epicontacts
 ```
 
-```{r, plot-epicontacts1}
+```{r, plot-epicontacts1, fig.cap="Weekly incidence of cases from symptom onset facetted by gender.", fig.width = 8, fig.height = 5}
 plot(epicontacts)
 ```
 
