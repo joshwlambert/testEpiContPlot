@@ -73,8 +73,8 @@ epicontacts <- epicontacts::make_epicontacts(
   linelist = outbreak$linelist, 
   contacts = outbreak$contacts, 
   id = "case_name", 
-  from = "part_name", 
-  to = "contact_name", 
+  from = "from", 
+  to = "to", 
   directed = TRUE
 )
 epicontacts
