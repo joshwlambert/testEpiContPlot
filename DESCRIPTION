@@ -22,7 +22,7 @@ Suggests:
     simulist,
     epiparameter
 Remotes:
-    epiverse-trace/simulist,
+    epiverse-trace/simulist@epicontacts,
     epiverse-trace/epiparameter@reexport_generics
 LazyData: true
 RoxygenNote: 7.2.3
